@@ -61,7 +61,3 @@ char	*ft_itoa(int nb)
 		u_nb = nb;
 	return (ft_putint(u_nb, nb, ndigit, arr));
 }
-/*int main()
-{
-	printf("%s",ft_itoa(10));
-}*/
