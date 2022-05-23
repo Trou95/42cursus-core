@@ -43,7 +43,6 @@ char	*ft_itoa(int nb)
 	unsigned int	u_nb;
 	char			*arr;
 	char			ndigit;
-	int				i;
 
 	if (nb == 0)
 		return (ft_strdup("0\0"));
@@ -51,7 +50,6 @@ char	*ft_itoa(int nb)
 	arr = malloc(ndigit);
 	if (!arr)
 		return (0);
-	i = 0;
 	if (nb < 0)
 	{
 		u_nb = -nb;
