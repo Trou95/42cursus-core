@@ -12,6 +12,7 @@ void ft_check_numbers(int ac, char** av)
 		index = 0;
 		while (av[i][index])
 			index = ft_check_number(av[i][index]);
+		i++;
 	}
 }
 
