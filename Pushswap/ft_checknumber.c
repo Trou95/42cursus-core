@@ -11,22 +11,19 @@ void ft_check_numbers(int ac, char** av)
 	{
 		index = 0;
 		while (av[i][index])
-			index = ft_check_number(av[i][index]);
+			index = ft_check_number(av[i][index],0,0,0);
 		i++;
 	}
 }
 
-int ft_check_number(const char* str)
+int ft_check_number(const char* str,int i,int bIsDigit,int bIsSign)
 {
-	int i;
-	int bIsDigit;
-	int bIsSign;
+	int n;
+	long long	val;
 
-	i = 0;
-	bIsDigit = 0;
-	bIsSign = 0;
 	while (str[i] && str[i] == ' ')
 		i++;
+	n = i;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		i++;
@@ -39,6 +36,9 @@ int ft_check_number(const char* str)
 		bIsDigit = 1;
 	}
 	if (!bIsDigit && bIsSign)
-		ft_util_msg(NULL);
+		return ft_util_msg(NULL);
+	val = ft_atoi(str + n);
+	if (val > INT_MAX || val < INT_MIN)
+		return ft_util_msg(NULL);
 	return (i);
 }

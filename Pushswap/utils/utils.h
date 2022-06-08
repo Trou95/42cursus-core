@@ -9,6 +9,7 @@
 #endif
 
 #include <stdio.h>
+#include <limits.h>
 
 
 
@@ -25,6 +26,8 @@ typedef struct s_list
 
 int	ft_isdigit(char c);
 size_t	ft_strlen(char* str);
+int	ft_strncmp(char* str, char* str2, int len);
+long long	ft_atoi(const char* str);
 
 t_list*	ft_util_initlist(t_list* list);
 
