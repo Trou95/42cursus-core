@@ -32,9 +32,10 @@ int ft_check_number(const char* str)
 		i++;
 		bIsSign = 1;
 	}
-	while (str[i] && ft_isdigit(str[i]))
+	while (str[i] && str[i] != ' ')
 	{
-		str++;
+		if (!ft_isdigit(str[i++]))
+			return ft_util_msg(NULL);
 		bIsDigit = 1;
 	}
 	if (!bIsDigit && bIsSign)
