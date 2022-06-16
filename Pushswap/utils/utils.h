@@ -32,7 +32,9 @@ long long	ft_atoi(const char* str);
 t_list*	ft_util_initlist(t_list* list);
 
 void	ft_check_numbers(int ac, char** av);
-int	ft_check_number(const char* str);
+int ft_check_number(char* str, int* i, int* bIsDigit, int type);
+
+int ft_util_msg(char* msg);
 
 
 

@@ -11,7 +11,7 @@ int main(int ac, char** av)
 	}
 }
 
-void ft_put_arr(s_list* list, int ac, char** av)
+void ft_put_arr(t_list* list, int ac, char** av)
 {
 	list = ft_util_initlist(list);
 

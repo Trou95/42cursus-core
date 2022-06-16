@@ -16,7 +16,7 @@ void ft_check_numbers(int ac, char** av)
 		while (av[i][index])
 		{
 			bIsDigit = 0;
-			ft_check_number(av[i][index], &index, &bIsDigit, 0);
+			ft_check_number(&av[i][index], &index, &bIsDigit, 0);
 			if (bIsDigit)
 				number_count++;
 		}
@@ -24,7 +24,7 @@ void ft_check_numbers(int ac, char** av)
 	}
 }
 
-int ft_check_number(const char* str,int* i,int* bIsDigit,int type)
+int ft_check_number(char* str,int* i,int* bIsDigit,int type)
 {
 	int n;
 	long long	val;
