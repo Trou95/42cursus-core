@@ -23,6 +23,9 @@ void FileReplacer::replace(const char *s1, const char *s2) {
     if((err = create(file,str)))
         exit(err);
 
+    if(file.is_open())
+        file.close();
+
     std::cout << str << std::endl;
 }
 
