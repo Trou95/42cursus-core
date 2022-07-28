@@ -51,12 +51,12 @@ void    ft_putnumber(t_data *p, char *str, int index)
 }
 
 
-void ft_array_push(int *arr, size_t size, int value)
+void ft_array_push(int *arr, int size, int value)
 {
    arr[size] = value;
 }
 
-void ft_array_swap(int *arr, size_t size)
+void ft_array_swap(int *arr, int size)
 {
     int tmp;
 
@@ -67,7 +67,7 @@ void ft_array_swap(int *arr, size_t size)
     arr[size - 1] = tmp;
 }
 
-void ft_array_rotate(int *arr, size_t size)
+void ft_array_rotate(int *arr, int size)
 {
     int tmp;
 
@@ -78,7 +78,7 @@ void ft_array_rotate(int *arr, size_t size)
     arr[0] = tmp;
 }
 
-void ft_array_revrotate(int *arr, size_t size)
+void ft_array_revrotate(int *arr, int size)
 {
     size_t i;
     int tmp;

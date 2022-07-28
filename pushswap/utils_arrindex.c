@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int ft_array_numidx(t_data *p)
+void ft_array_numidx(t_data *p)
 {
     int i;
     int *tmp;
@@ -9,7 +9,7 @@ int ft_array_numidx(t_data *p)
 
     tmp = malloc(sizeof(int) * p->b_size);
     if(!tmp)
-        return ft_error("Error: Allocation fail");
+        ft_error("Error: Allocation fail");
     i = -1;
     min = INT_MIN;
     while(++i < p->b_size)
@@ -18,6 +18,10 @@ int ft_array_numidx(t_data *p)
         tmp[minindex] = i;
         min = p->arr_b[minindex] + 1;
     }
+    i = -1;
+    while(++i < p->b_size)
+        p->arr_b[i] = tmp[i];
+    free(tmp);
     return 0;
 }
 
@@ -43,4 +47,16 @@ int ft_array_minidx(int *arr, size_t size, int start)
         i++;
     }
     return minindex;
+}
+
+int ft_array_pivot(int *arr, int size)
+{
+    int i;
+    unsigned long long sum;
+
+    i = 0;
+    sum = 0;
+    while(i < size)
+        sum += arr[i++];
+    return sum / size;
 }

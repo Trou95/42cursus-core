@@ -8,7 +8,6 @@ int main(int ac, char **av)
         p_data.total_size = ft_check_numbers(ac, av);
         ft_numprocess(&p_data, ac, av, 0);
         ft_is_shorted(&p_data);
-        indexing_numbers(&p_data);
         
     }
 }
