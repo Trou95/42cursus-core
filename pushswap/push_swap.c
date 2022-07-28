@@ -2,14 +2,13 @@
 
 int main(int ac, char **av)
 {
-    t_psw   s;
+    t_data  p_data;
     if (ac > 1)
     {
-        s.count = check_numbers(ac, av);
-        ft_allocatenumbers(&s);
-        ft_numprocess(&s, ac, av, 0);
-        ft_check_order(&s);
-        indexing_numbers(&s);
+        p_data.total_size = ft_check_numbers(ac, av);
+        ft_numprocess(&p_data, ac, av, 0);
+        ft_is_shorted(&p_data);
+        indexing_numbers(&p_data);
         
     }
 }
