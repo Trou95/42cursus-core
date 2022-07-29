@@ -1,6 +1,6 @@
 #include "FlagTrap.h"
 
-int main(int ac, char**av)
+int main()
 {
 	FlagTrap flagtrap("Player 1");
 	flagtrap.highFivesGuys();
