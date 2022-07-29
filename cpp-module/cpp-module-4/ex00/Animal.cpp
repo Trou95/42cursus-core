@@ -2,11 +2,12 @@
 
 Animal::Animal() {
 	type = "Animal";
-	cout << type << " created" << std::endl;
+	cout << "Default animal constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& animal) {
 	*this = animal;
+	cout << "Default animal copy constructor called" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& animal) {
@@ -25,5 +26,5 @@ void Animal::makeSound() const {
 }
 
 Animal::~Animal() {
-	cout << type << " destroyed" << std::endl;
+	cout << "Default animal destructor callled" << std::endl;
 }

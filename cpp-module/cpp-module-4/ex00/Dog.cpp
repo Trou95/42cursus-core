@@ -2,11 +2,12 @@
 
 Dog::Dog() {
 	type = "Dog";
-	cout << type << " created" << std::endl;
+	cout << "Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& dog) {
 	*this = dog;
+	cout << "Dog copy constructor called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& dog) {
@@ -21,5 +22,5 @@ void Dog::makeSound() const {
 }
 
 Dog::~Dog() {
-	cout << type << " destroyed" << std::endl;
+	cout << "Dog destructor called" << std::endl;
 }

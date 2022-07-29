@@ -17,7 +17,7 @@ public:
 	virtual void makeSound() const;
 	const string& getType() const;
 
-	~Animal();
+	virtual ~Animal();
 
 
 protected:

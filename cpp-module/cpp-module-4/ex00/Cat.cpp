@@ -2,11 +2,12 @@
 
 Cat::Cat() {
 	type = "Cat";
-	cout << type << " created" << std::endl;
+	cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& cat) {
 	*this = cat;
+	cout << "Cat copy constructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& cat) {
@@ -21,5 +22,5 @@ void Cat::makeSound() const {
 }
 
 Cat::~Cat() {
-	cout << type << " destroyed" << std::endl;
+	cout << "Cat destructor called" << std::endl;
 }
