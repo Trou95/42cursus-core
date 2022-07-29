@@ -1,17 +1,5 @@
 #include "push_swap.h"
 
-int    ft_init(t_data *p)
-{
-    p->arr_a = malloc(sizeof(int) * p->total_size);
-    if(!p->arr_a)
-        return ft_error("Error: Allocation error A");
-    p->arr_b = malloc(sizeof(int) * p->total_size);
-    if (!p->arr_b)
-        return ft_error("Error: Allocation error B");
-    p->a_size = 0;
-    p->b_size = 0;
-}
-
 void    ft_numprocess(t_data *p, int ac, char **av, int index)
 {
     int i;
@@ -45,9 +33,9 @@ void    ft_putnumber(t_data *p, char *str, int index)
     int number;
 
     number = ft_atoi(str);
-    if (ft_check_samenum(p->arr_a, number, index) == 1)
+    if (ft_check_samenum(p->arr_b, number, index) == 1)
         ft_error("Error : Same number.");
-    p->arr_a[index] = number;
+    ft_array_push(p->arr_b,p->b_size++,number);
 }
 
 

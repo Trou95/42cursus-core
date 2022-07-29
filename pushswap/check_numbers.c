@@ -63,14 +63,14 @@ int    ft_check_samenum(int *arr, int n, int index)
     return (0);
 }
 
-int ft_is_shorted(t_data *p)
+int ft_check_shorted(t_data *p)
 {
     int i;
 
     i = 0;
-    while (i < p->total_size)
+    while (i < p->total_size - 1)
     {
-        if (p->arr_a[i] < p->arr_a[i+1] )
+        if (p->arr_b[i] < p->arr_b[i+1] )
             i++;
         else
             return (0);
