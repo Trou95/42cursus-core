@@ -13,16 +13,16 @@ ClapTrap::ClapTrap(const string& name) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap& claptrap) : ClapTrap(claptrap._name) {
-	this->_hitpoints = claptrap._hitpoints;
-	this->_energy = claptrap._energy;
-	this->_attackdamage = claptrap._attackdamage;
+	*this = claptrap;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& claptrap) {
-	this->_name = claptrap._name;
-	this->_hitpoints = claptrap._hitpoints;
-	this->_energy = claptrap._energy;
-	this->_attackdamage = claptrap._attackdamage;
+	if(this != claptrap) {
+		this->_name = claptrap._name;
+		this->_hitpoints = claptrap._hitpoints;
+		this->_energy = claptrap._energy;
+		this->_attackdamage = claptrap._attackdamage;
+	}
 	return *this;
 }
 

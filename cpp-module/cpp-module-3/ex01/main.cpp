@@ -1,6 +1,6 @@
 #include "ScravTrap.h"
 
-int main(int ac, char**av)
+int main()
 {
 	ScravTrap scravtrap("Player 2");
 	scravtrap.guardGate();
