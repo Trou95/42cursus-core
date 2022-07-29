@@ -23,6 +23,10 @@ void Cat::makeSound() const {
 	cout << "Miyavv" << std::endl;
 }
 
+Brain* Cat::getBrain() {
+	return brain;
+}
+
 Cat::~Cat() {
 	if (brain != nullptr)
 		delete brain;

@@ -23,6 +23,10 @@ void Dog::makeSound() const {
 	cout << "Havv" << std::endl;
 }
 
+Brain* Dog::getBrain() {
+	return brain;
+}
+
 Dog::~Dog() {
 	if (brain != nullptr)
 		delete brain;

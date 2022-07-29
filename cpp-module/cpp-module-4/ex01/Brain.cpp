@@ -11,10 +11,14 @@ Brain::Brain(const Brain& brain) {
 
 Brain& Brain::operator=(const Brain& brain) {
 	if (this != &brain) {
-		for (int i = this->ideas->length(); i > 0; i--)
-			this->ideas[i] = brain.ideas[i];
+		for (int i = this->getIdeas()->length(); i > 0; i--)
+			this->_ideas[i] = brain._ideas[i];
 	}
 	return *this;
+}
+
+const string* Brain::getIdeas() {
+	return _ideas;
 }
 
 Brain::~Brain() {

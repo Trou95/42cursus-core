@@ -13,9 +13,12 @@ public:
 	Brain(const Brain& brain);
 	Brain& operator=(const Brain&);
 
-	string ideas[100];
+	const string* getIdeas();
 
 	~Brain();
+
+private:
+	string _ideas[100];
 };
 
 
