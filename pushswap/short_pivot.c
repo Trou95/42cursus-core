@@ -18,3 +18,15 @@ void ft_short_pivot(t_data *p)
             ft_rotate(p, 'a');
     }
 }
+
+int ft_array_pivot(int *arr, int size)
+{
+    int i;
+    unsigned long long sum;
+
+    i = 0;
+    sum = 0;
+    while(i < size)
+        sum += arr[i++];
+    return sum / size;
+}

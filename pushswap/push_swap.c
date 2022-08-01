@@ -11,12 +11,23 @@ int main(int ac, char **av)
         ft_check_shorted(&p_data);
 
         ft_array_numidx(&p_data);
-        ft_fill(&p_data);
 
         ft_short_pivot(&p_data);
+        ft_short_process(&p_data);
 
-         for(int i = 0; i < p_data.a_size; i++)
-            printf("%d\n",p_data.arr_a[i]);
+        printf("A\tB\n");
+        for(int i = 0; i < p_data.total_size; i++)
+        {
+            if(i < p_data.a_size)
+                printf("%d\t",p_data.arr_a[i]);
+            else 
+                printf("\t");
+            if(i < p_data.b_size)
+                printf("%d",p_data.arr_b[i]);
+            else 
+                printf(" ");
+            printf("\n");
+        }
        
     }
 }

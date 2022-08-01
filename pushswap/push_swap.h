@@ -40,6 +40,7 @@ void ft_short_pivot(t_data *p);
 
 int ft_init(t_data *p);
 void ft_fill(t_data *p);
+int ft_abs(int nb);
 
 
 void    ft_numprocess(t_data *s, int ac, char **av, int index);
@@ -50,6 +51,10 @@ int ft_error(char *s);
 size_t ft_strlen(char* str);
 void   ft_putstr(char* str);
 int ft_atoi(char *str);
+
+int ft_short_process(t_data *p);
+int ft_get_totalmove(t_data *p, int index, int *index_a);
+int ft_get_movecount(int size, int index);
 
 
 

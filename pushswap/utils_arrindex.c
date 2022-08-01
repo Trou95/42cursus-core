@@ -8,11 +8,11 @@ void ft_array_numidx(t_data *p)
 
     i = -1;
     min = INT_MIN;
-    while(++i < p->b_size)
+    while(++i < p->a_size)
     {
-        minindex = ft_array_minidx(p->arr_b, p->b_size, min);
-        min = p->arr_b[minindex] + 1;
-        p->arr_b[minindex] = i;
+        minindex = ft_array_minidx(p->arr_a, p->a_size, min);
+        min = p->arr_a[minindex] + 1;
+        p->arr_a[minindex] = i;
     }
 }
 
@@ -38,16 +38,4 @@ int ft_array_minidx(int *arr, size_t size, int start)
         i++;
     }
     return minindex;
-}
-
-int ft_array_pivot(int *arr, int size)
-{
-    int i;
-    unsigned long long sum;
-
-    i = 0;
-    sum = 0;
-    while(i < size)
-        sum += arr[i++];
-    return sum / size;
 }

@@ -70,7 +70,7 @@ int ft_check_shorted(t_data *p)
     i = 0;
     while (i < p->total_size - 1)
     {
-        if (p->arr_b[i] < p->arr_b[i+1] )
+        if (p->arr_a[i] < p->arr_a[i+1] )
             i++;
         else
             return (0);

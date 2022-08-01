@@ -35,7 +35,7 @@ void    ft_putnumber(t_data *p, char *str, int index)
     number = ft_atoi(str);
     if (ft_check_samenum(p->arr_b, number, index) == 1)
         ft_error("Error : Same number.");
-    ft_array_push(p->arr_b,p->b_size++,number);
+    ft_array_push(p->arr_a,p->a_size++,number);
 }
 
 
