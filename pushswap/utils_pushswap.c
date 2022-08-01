@@ -9,8 +9,8 @@ void ft_push(t_data *p, char check)
     }
     else 
     {
+        printf("push B: %d A: %d\n",p->arr_a[p->a_size - 1],p->a_size);
         ft_array_push(p->arr_b, p->b_size++,p->arr_a[p->a_size-- - 1]);
-        printf("push B: %d\n",p->arr_a[p->a_size]);
         ft_putstr("pb\n");
     }
 }

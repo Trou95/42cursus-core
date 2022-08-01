@@ -36,6 +36,7 @@ void ft_rotate(t_data *p, char check);
 void ft_revrotate(t_data *p, char check);
 
 void ft_short_pivot(t_data *p);
+int ft_short_move(t_data *p, int index_a, int index_b);
 
 
 int ft_init(t_data *p);
@@ -55,6 +56,9 @@ int ft_atoi(char *str);
 int ft_short_process(t_data *p);
 int ft_get_totalmove(t_data *p, int index, int *index_a);
 int ft_get_movecount(int size, int index);
+
+
+void ft_print(t_data *p);
 
 
 
