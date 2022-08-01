@@ -48,8 +48,23 @@ int main(int ac, char **av)
         ft_short_pivot(&p_data);
         ft_short_process(&p_data);
 
-        //while(!ft_check_shorted2(&p_data))
-            //ft_rotate(&p_data,'a');
+        ft_print(&p_data);
+        printf("\n\n");
+
+
+        while(!ft_check_shorted2(&p_data))
+        {
+         ft_rotate(&p_data,'a');
+         if(p_data.arr_a[p_data.a_size - 1] > p_data.arr_a[p_data.a_size - 2] && p_data.arr_a[p_data.a_size - 1] == p_data.arr_a[p_data.a_size - 2] + 1)
+         {
+            ft_swap(&p_data,'a');
+            printf("ss\n");
+         }
+         ft_print(&p_data);
+         printf("------\n");
+         getchar();
+
+        }
 
         ft_print(&p_data);
        

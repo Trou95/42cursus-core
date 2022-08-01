@@ -12,7 +12,7 @@ void ft_short_pivot(t_data *p)
             printf("%d\n",p->arr_a[i]);
         printf("-----\n");
         printf("res: %d\n",res);
-        if(p->arr_a[p->a_size - 1] <= res)
+        if(p->arr_a[p->a_size - 1] < res)
             ft_push(p, 'b');
         else
             ft_rotate(p, 'a');
