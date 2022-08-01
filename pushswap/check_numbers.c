@@ -77,10 +77,3 @@ int ft_check_shorted(t_data *p)
     }
     return (ft_error("Error: Already shorted"));
 }
-
-int ft_error(char *s)
-{
-    printf("%s\n", s);
-    exit(1);
-    return 0;
-}

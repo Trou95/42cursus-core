@@ -35,31 +35,29 @@ void ft_swap(t_data *p, char check);
 void ft_rotate(t_data *p, char check);
 void ft_revrotate(t_data *p, char check);
 
-void ft_short_pivot(t_data *p);
-int ft_short_move(t_data *p, int index_a, int index_b);
+void ft_sort_pivot(t_data *p);
+int ft_array_pivot(int* arr, int size);
 
+int ft_sort_process(t_data *p);
+int ft_sort_move(t_data *p, int index_a, int index_b);
+void ft_sort_fnhook(int count, void(*fn)(t_data *, char), t_data *p, char check);
 
-int ft_init(t_data *p);
-void ft_fill(t_data *p);
-int ft_abs(int nb);
-
+int ft_get_totalmove(t_data *p, int index, int *index_a);
+int ft_get_movecount(int size, int index);
 
 void    ft_numprocess(t_data *s, int ac, char **av, int index);
 void    ft_putnumber(t_data *s, char *str, int index);
 
+int ft_init(t_data *p);
+int ft_atoi(char *str);
+int ft_abs(int nb);
 int ft_error(char *s);
 
 size_t ft_strlen(char* str);
 void   ft_putstr(char* str);
-int ft_atoi(char *str);
-
-int ft_short_process(t_data *p);
-int ft_get_totalmove(t_data *p, int index, int *index_a);
-int ft_get_movecount(int size, int index);
 
 
 void ft_print(t_data *p);
-
 
 
 

@@ -45,8 +45,8 @@ int main(int ac, char **av)
 
         ft_array_numidx(&p_data);
 
-        ft_short_pivot(&p_data);
-        ft_short_process(&p_data);
+        ft_sort_pivot(&p_data);
+        ft_sort_process(&p_data);
 
         ft_print(&p_data);
         printf("\n\n");

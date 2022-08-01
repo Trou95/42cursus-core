@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int ft_short_process(t_data *p)
+int ft_sort_process(t_data *p)
 {
     int i;
     int idx_a;
@@ -8,11 +8,6 @@ int ft_short_process(t_data *p)
     int tmpidx_a;
     int count;
 
-    idx_a = 0;
-    idx_b = 0;
-    tmpidx_a = 0;
-    count = INT_MAX;
-    int total = 0;
     while(p->b_size)
     {
       i = 0;
@@ -29,33 +24,22 @@ int ft_short_process(t_data *p)
        i++;
       printf("Count %d %d %d\n",count,idx_a,idx_b);
      }
-     printf("Count: %d %d, A: %d %d B: %d %d CountA:%d CountB: %d\n", count, total,p->arr_a[idx_a],idx_a,p->arr_b[idx_b],idx_b,ft_get_movecount(p->a_size,idx_a),ft_get_movecount(p->b_size,idx_b));
-     ft_short_move(p,ft_get_movecount(p->a_size,idx_a),ft_get_movecount(p->b_size,idx_b));
+     printf("Count: %d , A: %d %d B: %d %d CountA:%d CountB: %d\n", count,p->arr_a[idx_a],idx_a,p->arr_b[idx_b],idx_b,ft_get_movecount(p->a_size,idx_a),ft_get_movecount(p->b_size,idx_b));
+     ft_sort_move(p,ft_get_movecount(p->a_size,idx_a),ft_get_movecount(p->b_size,idx_b));
     }
-    printf("--------\n");
-    printf("B Size: %d\n",p->b_size);
-    printf("--------\n");
-    //while(p->b_size)
-    //{
-      //printf("Count: %d A: %d %d B: %d %d\n", count, p->arr_a[idx_a],idx_a,p->arr_b[idx_b],idx_b);
-      
-    //}
 }
 
-void ft_sort_fnhook(int count, void(*fn)(t_data*,char check), t_data* p, char check)
+void ft_sort_fnhook(int count, void(*fn)(t_data*, char), t_data* p, char check)
 {
   int i = 0;
   while(i < count)
   {
     fn(p,check);
-    printf("------fn\n");
-    ft_print(p);
-    printf("------\n");
     i++;
   }
 }
 
-int ft_short_move(t_data *p,int index_a, int index_b)
+int ft_sort_move(t_data *p,int index_a, int index_b)
 {
   ft_print(p);
   if(index_a > 0)
@@ -109,13 +93,10 @@ int ft_get_totalmove(t_data *p,int index,int *index_a)
   int count;
 
   *index_a = ft_array_minidx(p->arr_a, p->a_size, p->arr_b[index]);
-  printf("%d TotalMoveIndex: %d ",index,*index_a);
   count = ft_abs(ft_get_movecount(p->b_size, index));
-  printf("%d ", count);
   if(*index_a == -1)
     return ft_error("Error: Total move");
   count += ft_abs(ft_get_movecount(p->a_size, *index_a));
-  printf("%d\n",count);
   return (count);
 }
 

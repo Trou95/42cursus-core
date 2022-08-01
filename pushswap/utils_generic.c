@@ -12,17 +12,27 @@ int    ft_init(t_data *p)
     p->b_size = 0;
 }
 
-void ft_fill(t_data *p)
+int ft_atoi(char *str)
 {
-    int i;
+    long result;
+    int sign;
 
-    i = 0;
-    while(i < p->total_size)
+    result = 0;
+    sign = 1;
+
+    if (*str == '+' || *str == '-')
+        if (*str++ == '-')
+            sign = -1;
+    while (*str && *str >= '0' && *str <= '9')
     {
-        ft_push(p,'a');
-        p->arr_b[p->total_size - i - 1] = 0;
-        i++;
+        result = result * 10 + (*str - '0');
+        if (result * sign > INT_MAX)
+            return ft_error("Error: ");
+        if(result * sign < INT_MIN)
+            return ft_error("Error: ");
+        str++;
     }
+    return ((int)result * sign);
 }
 
 int ft_abs(int nb)
@@ -30,4 +40,11 @@ int ft_abs(int nb)
     if(nb < 0)
         return (-nb);
     return (nb);
+}
+
+int ft_error(char *s)
+{
+    printf("%s\n", s);
+    exit(1);
+    return 0;
 }
