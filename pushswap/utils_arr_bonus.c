@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "checker.h"
 
 void	ft_array_push(int *arr, int size, int value)
 {

@@ -1,73 +1,80 @@
 #include "push_swap.h"
 
-
-int ft_check_shorted2(t_data *p)
+void	ft_sort_move2(t_data *p, int side)
 {
-    int i;
-
-    i = 0;
-    while (i < p->total_size - 1)
-    {
-        if (p->arr_a[i] > p->arr_a[i+1] )
-            i++;
-        else
-            return (0);
-    }
-    return 1;
+	if (side > 0)
+		ft_sort_fnhook(side, &ft_rotate, p, 'a');
+	if (side < 0)
+		ft_sort_fnhook(ft_abs(side), &ft_revrotate, p, 'a');
+	ft_push(p, 'b');
 }
 
-void ft_print(t_data *p_data)
+void	ft_sort_threearg(t_data *p)
 {
-     printf("A\tB\n");
-        for(int i = 0; i < p_data->total_size; i++)
-        {
-            if(i < p_data->a_size)
-                printf("%d\t",p_data->arr_a[i]);
-            else 
-                printf("\t");
-            if(i < p_data->b_size)
-                printf("%d",p_data->arr_b[i]);
-            else 
-                printf(" ");
-            printf("\n");
-        }
-        
+	if (p->a_size == 3)
+	{
+		if (ft_array_minidx(p->arr_a, p->a_size, INT_MIN) == 0)
+		{
+			if (p->arr_a[1] > p->arr_a[2])
+				ft_sort_fnhook(1, &ft_revrotate, p, 'a');
+			else if (p->arr_a[1] < p->arr_a[2])
+				ft_sort_fnhook(1, &ft_rotate, p, 'a');
+		}
+		else if (ft_array_minidx(p->arr_a, p->a_size, INT_MIN) == 1)
+		{
+			if (p->arr_a[0] > p->arr_a[2])
+				ft_swap(p, 'a');
+			else if (p->arr_a[0] < p->arr_a[2])
+				ft_sort_fnhook(1, &ft_rotate, p, 'a');
+		}
+		else if (ft_array_minidx(p->arr_a, p->a_size,
+				INT_MIN) == 2 && p->arr_a[1] > p->arr_a[0])
+		{
+			ft_swap(p, 'a');
+			ft_sort_fnhook(1, &ft_rotate, p, 'a');
+		}
+	}
 }
 
-int main(int ac, char **av)
+void	ft_sort_fivearg(t_data *p)
 {
-    t_data  p_data;
-    if (ac > 1)
-    {
-        p_data.total_size = ft_check_numbers(ac, av);
-        ft_numprocess(&p_data, ac, av, 0);
-        ft_check_shorted(&p_data);
+	int	min;
+	int	i;
+	int	side;
 
-        ft_array_numidx(&p_data);
+	min = INT_MIN;
+	while (p->a_size > 3)
+	{
+		i = ft_array_minidx(p->arr_a, p->a_size, min);
+		min = p->arr_a[i];
+		side = ft_get_movecount(p->a_size, i);
+		ft_sort_move2(p, side);
+	}
+	ft_sort_threearg(p);
+	if (!ft_check_sorted(p))
+		ft_swap(p, 'a');
+	ft_sort_fnhook(p->b_size, &ft_push, p, 'a');
+}
 
-        ft_sort_pivot(&p_data);
-        ft_sort_process(&p_data);
+int	main(int ac, char **av)
+{
+	t_data	p_data;
 
-        ft_print(&p_data);
-        printf("\n\n");
-
-
-        while(!ft_check_shorted2(&p_data))
-        {
-         ft_rotate(&p_data,'a');
-         if(p_data.arr_a[p_data.a_size - 1] > p_data.arr_a[p_data.a_size - 2] && p_data.arr_a[p_data.a_size - 1] == p_data.arr_a[p_data.a_size - 2] + 1)
-         {
-            ft_swap(&p_data,'a');
-            printf("ss\n");
-         }
-         ft_print(&p_data);
-         printf("------\n");
-         getchar();
-
-        }
-
-        ft_print(&p_data);
-       
-       
-    }
+	if (ac > 1)
+	{
+		p_data.total_size = ft_check_numbers(ac, av);
+		ft_numprocess(&p_data, ac, av);
+		if (ft_check_sorted(&p_data) == 1)
+			return (0);
+		ft_array_numidx(&p_data);
+		if (p_data.total_size > 5)
+		{
+			ft_sort_pivot(&p_data);
+			ft_sort_process(&p_data);
+		}
+		else
+			ft_sort_fivearg(&p_data);
+		while (!ft_check_sorted(&p_data))
+			ft_rotate(&p_data, 'a');
+	}
 }

@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "checker.h"
 
 int	ft_check_numbers(int ac, char **av)
 {
@@ -12,7 +12,7 @@ int	ft_check_numbers(int ac, char **av)
 	while (i < ac)
 	{
 		if (!ft_strlen(av[i]))
-			ft_error("Error:");
+			ft_error("Error: Empty argument");
 		j = 0;
 		while (av[i][j])
 		{
@@ -42,7 +42,7 @@ int	ft_check_number(char *str, int *is_num)
 		*is_num = ++i;
 	}
 	if (!*is_num)
-		return (ft_error("Error: There is not number."));
+		return (ft_error("Error"));
 	while (str[i] && str[i] == ' ')
 		i++;
 	return (i);
@@ -66,7 +66,9 @@ int	ft_check_sorted(t_data *p)
 	int	i;
 
 	i = 0;
-	while (i < p->a_size - 1)
+	if (p->b_size != 0)
+		return (0);
+	while (i < p->total_size - 1)
 	{
 		if (p->arr_a[i] > p->arr_a[i + 1])
 			i++;
