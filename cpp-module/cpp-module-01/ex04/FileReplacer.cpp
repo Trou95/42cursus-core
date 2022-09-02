@@ -22,7 +22,7 @@ void FileReplacer::replace(const char *s1, const char *s2) {
     std::cout << " " << str << std::endl;
     strreplace(str,s1,s2);
     std::cout << " " << str << std::endl;
-    if((err = create(file,str)))
+    if((err = create(str)))
         exit(err);
 
     if(file.is_open())
@@ -44,8 +44,13 @@ unsigned short int FileReplacer::open(std::fstream &file) {
 unsigned short FileReplacer::read(std::fstream &file, std::string& buffer) {
     try{
         std::string tmp;
-        while(file >> tmp)
+        if(file.peek() == std::ifstream::traits_type::eof()){
+            std::cout << "File is empty" << std::endl;
+            exit(1);
+        }
+        while(file >> tmp) {
             buffer.append(tmp + ' ');
+        }
     }
     catch(std::ios_base::failure& e){
         std::cout << strerror(errno) << std::endl;
@@ -54,7 +59,7 @@ unsigned short FileReplacer::read(std::fstream &file, std::string& buffer) {
     return 0;
 }
 
-unsigned short FileReplacer::create(std::fstream &file, const std::string& buffer) {
+unsigned short FileReplacer::create(const std::string& buffer) {
     std::string _path;
     size_t index = _filePath.find_last_of('/');
     if(index == _filePath.npos)

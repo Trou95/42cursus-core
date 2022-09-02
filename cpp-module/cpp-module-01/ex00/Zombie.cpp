@@ -22,5 +22,5 @@ void Zombie::randomChump(string name) {
 }
 
 Zombie::~Zombie() {
-    cout << "Zombie deconsructer called" << endl;
+    cout << _name << " deconsructer called" << endl;
 }

@@ -2,7 +2,11 @@
 
 
 Harl::Harl() {
-    void (Harl::*tmp[4])(void) { &Harl::debug,&Harl::info, &Harl::warning, &Harl::error};
+    void (Harl::*tmp[4])(void);
+    tmp[0] = &Harl::debug;
+    tmp[1] = &Harl::info;
+    tmp[2] = &Harl::warning;
+    tmp[3] = &Harl::error;
     const char* str[4] = { "DEBUG","INFO","WARNING","ERROR" };
     for (int i = 0; i < 4; i++){
         _levels[i] = str[i];

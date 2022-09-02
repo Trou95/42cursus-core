@@ -2,6 +2,7 @@
 #define _FILEREPLACER_H_
 
 #include <iostream>
+#include <stdlib.h>
 #include <string>
 #include <string.h>
 #include <fstream>
@@ -15,7 +16,7 @@ public:
 private:
     unsigned short int open(std::fstream& file);
     unsigned short int read(std::fstream& file, std::string& buffer);
-    unsigned short int create(std::fstream& file, const std::string& buffer);
+    unsigned short int create(const std::string& buffer);
 
     std::string _fileName;
     std::string _filePath;

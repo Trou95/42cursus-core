@@ -16,9 +16,8 @@ Zombie *Zombie::newZombie(string name) {
 }
 
 void Zombie::randomChump(string name) {
-    Zombie *zombie = new Zombie(name);
-    zombie->announce();
-    delete zombie;
+    Zombie zombie(name);
+    zombie.announce();
 }
 
 Zombie *Zombie::zombieHorde(int N, string name) {
@@ -34,5 +33,5 @@ void Zombie::setName(const string &name) {
 }
 
 Zombie::~Zombie() {
-    cout << "Zombie deconsructer called" << endl;
+    cout << _name << " deconsructer called" << endl;
 }
