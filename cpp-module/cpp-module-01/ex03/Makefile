@@ -1,5 +1,5 @@
 NAME = weapon
-SRCS = *.cpp
+SRCS = HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CC = g++
