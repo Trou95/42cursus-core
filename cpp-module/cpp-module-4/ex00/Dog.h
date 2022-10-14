@@ -3,18 +3,15 @@
 
 #include "Animal.h"
 
-class Dog : public Animal {
+class Dog: public Animal{
 public:
 	Dog();
-	Dog(const Dog& cat);
-	Dog& operator=(const Dog& cat);
-
+	Dog(const Dog& dog);
+	Dog& operator=(const Dog& dog);
+	string getType() const;
 	void makeSound() const;
-
-	~Dog();
-
+	virtual ~Dog();
 };
-
 
 
 #endif

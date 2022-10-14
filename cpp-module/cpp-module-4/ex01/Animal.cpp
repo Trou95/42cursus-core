@@ -1,24 +1,28 @@
+
+
 #include "Animal.h"
 
 Animal::Animal() {
-	type = "Animal";
-	cout << "Default animal constructor called" << std::endl;
+	this->type = "Animal";
+	cout << "Animal constructor called" << endl;
+
 }
 
 Animal::Animal(const Animal& animal) {
 	*this = animal;
-	cout << "Default animal copy constructor called" << std::endl;
+	cout << "Animal copy constructor called" << endl;
 }
 
 Animal& Animal::operator=(const Animal& animal) {
-	if (this != &animal) {
-		this->type = animal.type;
-	}
+	if (this != &animal)
+		return *this;
+	this->type = animal.type;
+	cout << "Animal assignation operator called" << endl;
 	return *this;
 }
 
 const string& Animal::getType() const {
-	return type;
+	return this->type;
 }
 
 void Animal::makeSound() const {
@@ -26,5 +30,5 @@ void Animal::makeSound() const {
 }
 
 Animal::~Animal() {
-	cout << "Default animal destructor callled" << std::endl;
+	cout << "Animal destructor called" << endl;
 }

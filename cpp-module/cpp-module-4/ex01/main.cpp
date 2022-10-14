@@ -1,22 +1,15 @@
-#include "Cat.h"
 #include "Dog.h"
+#include "Cat.h"
+#include "WrongCat.h"
 
 int main()
 {
-	Animal* animals[10] = {
-		new Cat(),
-		new Cat(),
-		new Cat(),
-		new Cat(),
-		new Cat(),
-		new Dog(),
-		new Dog(),
-		new Dog(),
-		new Dog(),
-		new Dog()
-	};
-	cout << "------" << std::endl;
-	for (int i = 0; i < 10; i++)
+	const Animal* animals[4] = {new Cat, new Dog, new Cat, new Dog};
+
+	for (int i = 0; i < sizeof(animals) / sizeof(Animal*); ++i) {
+		animals[i]->makeSound();
 		delete animals[i];
-	
+	}
+
+	return 0;
 }

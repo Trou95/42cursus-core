@@ -1,26 +1,27 @@
 #include "Dog.h"
 
 Dog::Dog() {
-	type = "Dog";
-	cout << "Dog constructor called" << std::endl;
+	this->type = "Dog";
+	cout << "Dog constructor called" << endl;
 }
 
 Dog::Dog(const Dog& dog) {
 	*this = dog;
-	cout << "Dog copy constructor called" << std::endl;
+	cout << "Dog copy constructor called" << endl;
 }
 
 Dog& Dog::operator=(const Dog& dog) {
-	if (this != &dog) {
-		this->type = dog.type;
-	}
+	if (this != &dog)
+		return *this;
+	this->type = dog.type;
+	cout << "Dog assignation operator called" << endl;
 	return *this;
 }
 
 void Dog::makeSound() const {
-	cout << "Havv" << std::endl;
+	cout << "Dog hav hav hav" << endl;
 }
 
 Dog::~Dog() {
-	cout << "Dog destructor called" << std::endl;
+	cout << "Dog destructor called" << endl;
 }

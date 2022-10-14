@@ -3,28 +3,23 @@
 
 #include <iostream>
 
-
-using std::cout;
 using std::string;
-
+using std::cout;
+using std::endl;
 
 class Animal {
+
 public:
 	Animal();
-	Animal(const Animal&);
-	Animal& operator=(const Animal&);
-
-	virtual void makeSound() const;
+	Animal(const Animal& animal);
+	Animal& operator=(const Animal& animal);
 	const string& getType() const;
-
+	virtual void makeSound() const;
 	virtual ~Animal();
-
 
 protected:
 	string type;
-
 };
-
 
 
 #endif

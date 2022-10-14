@@ -1,26 +1,27 @@
 #include "Cat.h"
 
 Cat::Cat() {
-	type = "Cat";
-	cout << "Cat constructor called" << std::endl;
+	this->type = "Cat";
+	cout << "Cat constructor called" << endl;
 }
 
 Cat::Cat(const Cat& cat) {
 	*this = cat;
-	cout << "Cat copy constructor called" << std::endl;
+	cout << "Cat copy constructor called" << endl;
 }
 
 Cat& Cat::operator=(const Cat& cat) {
-	if (this != &cat) {
-		this->type = cat.type;
-	}
+	if (this != &cat)
+		return *this;
+	this->type = cat.type;
+	cout << "Cat assignation operator called" << endl;
 	return *this;
 }
 
 void Cat::makeSound() const {
-	cout << "Miyavv" << std::endl;
+	cout << "Cat miyavvvvv" << endl;
 }
 
 Cat::~Cat() {
-	cout << "Cat destructor called" << std::endl;
+	cout << "Cat destructor called" << endl;
 }
