@@ -6,15 +6,17 @@ Dog::Dog() {
 	cout << "Dog constructor called" << endl;
 }
 
-Dog::Dog(const Dog& dog) {
+Dog::Dog(const Dog& dog) : Animal(){
 	*this = dog;
 	cout << "Dog copy constructor called" << endl;
 }
 
 Dog& Dog::operator=(const Dog& dog) {
-	if (this != &dog)
+	if (this == &dog)
 		return *this;
 	this->type = dog.type;
+	this->brain = new Brain();
+	*(this->brain) = *(dog.brain);
 	cout << "Dog assignation operator called" << endl;
 	return *this;
 }

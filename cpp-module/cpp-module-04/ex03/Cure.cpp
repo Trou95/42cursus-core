@@ -9,7 +9,7 @@ Cure::Cure(const Cure& ice) : AMateria(ice) {
 }
 
 Cure& Cure::operator=(const Cure& cure) {
-	if (this != &cure)
+	if (this == &cure)
 		return *this;
 	this->_type = cure._type;
 	cout << "Cure assignation operator called" << endl;

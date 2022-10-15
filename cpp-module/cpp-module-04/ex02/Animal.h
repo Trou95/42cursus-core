@@ -12,7 +12,7 @@ class Animal {
 public:
 	Animal& operator=(const Animal& animal);
 	const string& getType() const;
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 	virtual ~Animal();
 
 protected:

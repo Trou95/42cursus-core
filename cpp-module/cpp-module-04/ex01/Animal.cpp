@@ -1,5 +1,3 @@
-
-
 #include "Animal.h"
 
 Animal::Animal() {
@@ -14,7 +12,7 @@ Animal::Animal(const Animal& animal) {
 }
 
 Animal& Animal::operator=(const Animal& animal) {
-	if (this != &animal)
+	if (this == &animal)
 		return *this;
 	this->type = animal.type;
 	cout << "Animal assignation operator called" << endl;

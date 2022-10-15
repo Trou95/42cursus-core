@@ -16,7 +16,7 @@ Character::Character(const Character &character) {
 }
 
 Character &Character::operator=(const Character &character) {
-	if (this != &character)
+	if (this == &character)
 		return *this;
 	cout << "Character assignation operator called" << endl;
 	return *this;

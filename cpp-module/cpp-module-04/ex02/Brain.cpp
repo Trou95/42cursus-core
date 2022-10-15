@@ -12,7 +12,7 @@ Brain::Brain(const Brain &brain) {
 }
 
 Brain &Brain::operator=(const Brain &brain) {
-	if (this != &brain)
+	if (this == &brain)
 		return *this;
 	for (int i = 0; i < 100; ++i) {
 		this->ideas[i] = brain.ideas[i];

@@ -9,7 +9,7 @@ Ice::Ice(const Ice& ice) : AMateria(ice) {
 }
 
 Ice& Ice::operator=(const Ice& ice) {
-	if (this != &ice)
+	if (this == &ice)
 		return *this;
 	this->_type = ice._type;
 	cout << "Ice assignation operator called" << endl;

@@ -11,7 +11,7 @@ Dog::Dog(const Dog& dog) {
 }
 
 Dog& Dog::operator=(const Dog& dog) {
-	if (this != &dog)
+	if (this == &dog)
 		return *this;
 	this->type = dog.type;
 	cout << "Dog assignation operator called" << endl;

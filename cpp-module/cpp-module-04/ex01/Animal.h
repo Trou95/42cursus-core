@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "Brain.h"
+
 using std::string;
 using std::cout;
 using std::endl;

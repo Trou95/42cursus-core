@@ -13,7 +13,7 @@ MateriaSource::MateriaSource(const MateriaSource& materiaSource) {
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& materiaSource) {
-	if (this != &materiaSource)
+	if (this == &materiaSource)
 		return *this;
 	cout << "MateriaSource assignation operator called" << endl;
 	return *this;
