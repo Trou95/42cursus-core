@@ -2,7 +2,6 @@
 #define _MUTANTSTACK_H_
 
 #include <stack>
-#include <deque>
 
 
 template<class T>
