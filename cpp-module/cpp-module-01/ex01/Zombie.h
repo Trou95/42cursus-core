@@ -9,21 +9,22 @@ using std::string;
 
 class Zombie
 {
-public:
-    Zombie();
-    Zombie(const string& name);
+    public:
+        Zombie();
+        Zombie(const string& name);
 
-    void announce();
-    Zombie* newZombie(string name);
-    void randomChump(string name);
-    Zombie* zombieHorde(int N, string name);
-    void setName(const string& name);
+        void announce();
+        Zombie* newZombie(string name);
+        void randomChump(string name);
+        void setName(const string& name);
 
-    ~Zombie();
+        ~Zombie();
 
-private:
-    string _name;
+    private:
+        string _name;
 };
+
+Zombie* zombieHorde(int N, string name);
 
 
 #endif
