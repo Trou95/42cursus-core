@@ -7,7 +7,7 @@ class PhoneBook {
 public:
     PhoneBook();
     bool addContact(const string& firstname,const string& lastname,const string& nickname,const string& phonenumber,const string& darkestsecret);
-    bool showContactID(int index);
+    bool showContactID(int index,bool is_table);
     void showContacts();
     const string formatString(const string& text);
     bool isNumber(const string text);

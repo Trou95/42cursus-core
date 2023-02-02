@@ -23,19 +23,27 @@ bool PhoneBook::addContact(const string &firstName, const string &lastName, cons
     return true;
 }
 
-bool PhoneBook::showContactID(int index) {
+bool PhoneBook::showContactID(int index,bool is_table) {
     if(index > size)
         return false;
-    cout << std::setw(5) << index << "|";
-    cout << formatString(_contacts[index].getFirstName()) << "|";
-    cout << formatString(_contacts[index].getLastName()) << "|";
-    cout << formatString(_contacts[index].getNickName()) << "|" << endl;
+    if(is_table) {
+        cout << std::setw(5) << index << "|";
+        cout << formatString(_contacts[index].getFirstName()) << "|";
+        cout << formatString(_contacts[index].getLastName()) << "|";
+        cout << formatString(_contacts[index].getNickName()) << "|" << endl;
+    }
+    else {
+     cout << "FirstName: " << _contacts[index].getFirstName() << endl;
+     cout << "LastName: " << _contacts[index].getLastName() << endl;
+     cout << "NickName: " << _contacts[index].getNickName() << endl;
+     cout << "Phonenumber: " << _contacts[index].getPhoneNumber() << endl;
+    }
     return true;
 }
 
 void PhoneBook::showContacts() {
     for(int i = 0; i < size; i++)
-        showContactID(i);
+        showContactID(i,true);
 }
 
 const string PhoneBook::formatString(const string &text) {

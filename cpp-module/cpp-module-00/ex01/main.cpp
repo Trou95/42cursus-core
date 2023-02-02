@@ -41,7 +41,7 @@ int main()
             phoneBook.showContacts();
             cout << "Enter index: ";
             std::getline(cin, id);
-            if(phoneBook.isNumber(id) == false || phoneBook.showContactID(atoi(id.c_str())) == false)
+            if(phoneBook.isNumber(id) == false || phoneBook.showContactID(atoi(id.c_str()),false) == false)
                 cout << "Invalid index" << endl;
         }
         else if(input == "EXIT")
