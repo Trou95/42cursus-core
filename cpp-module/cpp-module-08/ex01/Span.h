@@ -6,12 +6,15 @@
 
 class Span {
 public:
+    typedef std::vector<int>::iterator iterator;
+
 	Span();
 	Span(unsigned int n);
 	Span(Span const & span);
 	Span& operator=(Span const & span);
 
 	void addNumber(int number);
+    void addNumber(iterator begin,iterator end);
 	int shortestSpan();
 	int longestSpan();
 

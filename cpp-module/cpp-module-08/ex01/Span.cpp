@@ -27,6 +27,12 @@ void Span::addNumber(int number) {
 	v.push_back(number);
 }
 
+void Span::addNumber(iterator begin, iterator end) {
+    for(; begin != end; begin++)
+        addNumber(*begin);
+}
+
+
 int Span::shortestSpan() {
 	if(v.size() < 2)
 		throw VectorIsTooSmallException();
