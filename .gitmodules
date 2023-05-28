@@ -1,0 +1,3 @@
+[submodule "Webserv"]
+	path = Webserv
+	url = git@github.com:Trou95/Webserv.git
